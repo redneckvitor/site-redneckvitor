@@ -1,14 +1,31 @@
 :root {
-  --color-1: #eceff4;
-  --color-2: #5e81ac;
-  --background-color-1: #2e3440;
+  --font-1: "Inter", sans-serif;
+  --font-2: "Red Hat Display", sans-serif;
+  /* Cores */
+  --cor-principal: #d74247;
+  --cor-texto: #dbdcde;
 
-  --color-github: #6e5494;
-  --color-linkedin: #006192;
+  /* Tamanhos */
+  --tamanho-foto-desktop: 20%;
+  --tamanho-foto-mobile: 20%;
+  --tamanho-desktop: 40%;
+  --tamanho-mobile: 90%;
 
-  /* Cores do gradiente do
-  Instagram */
+  /* Cores das redes sociais */
+  --color-instagram: ;
+  --color-whatsapp: #4fce5d;
+  --color-facebook: #1877f2;
+  --color-youtube: #ff0000;
+  --color-telegram: #0088cc;
+  --color-discord: ;
+  --color-twitch: #6441a4;
+  --color-discord: #738adb;
+  --color-linkedin: hsl(200, 100%, 39%);
+  --color-github: #683caa;
+  --color-tiktok: #000;
+  --color-twitter: #1da1f2;
 
+  /* Gradiente do Instagram */
   --white: #fff;
   --blue: #3051f1;
   --purple: #c92bb7;
@@ -16,108 +33,103 @@
   --orange: #fa8e37;
   --yellow: #fcdf8f;
   --yellow_to: #fbd377;
-
-  --font-1: "Inter", sans-serif;
 }
 
-/* Defaults */
+::selection {
+  color: var(--cor-texto);
+  background-color: var(--cor-principal);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body {
-  width: 100%;
-  background-color: var(--background-color-1);
-  margin: 0px;
-  padding: 0px;
+  background-color: rgba(29, 30, 42, 1);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-1);
-  text-align: center;
-  font-family: var(--font-1);
+.container {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
 }
 
-/* Main section */
+div {
+  border: 0px solid white;
 
-.main-section {
-  margin: auto;
   display: block;
-  padding-top: 4%;
-  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  width: var(--tamanho-desktop);
+  min-height: 33.33333vh;
 }
 
-/* Div das informações da pessoa */
-
-#foto-da-pessoa {
-  width: 38%;
-  height: auto;
+.user-image {
   border-radius: 50%;
-  margin: auto;
-  display: block;
+  border: 4px solid var(--cor-principal);
   padding: 1%;
-  border: 8px solid var(--color-2);
+
+  width: var(--tamanho-foto-desktop);
+  height: auto;
+  margin: 2% auto;
+  display: block;
 }
 
-h1.titulo {
-  font-family: var(--font-1);
-  font-size: 240%;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-h2.subtitulo {
-  font-family: var(--font-1);
+.titulo {
+  color: var(--cor-texto);
+  font-family: var(--font-2);
   font-size: 340%;
-  font-weight: 200;
-  margin-top: -40px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.2rem;
 }
 
-/* Parte dos links da pessoa */
+.subtitulo {
+  color: var(--cor-texto);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 2.4em;
+  text-align: center;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .button {
-  color: var(--background-color-1);
+  color: #131416;
+  opacity: 0.8;
+  backdrop-filter: blur(9.5px);
+  background-color: var(--cor-texto);
+  -webkit-backdrop-filter: blur(12.5px);
+  border-radius: 40px;
+  transition: 0.4s;
+
+  font-size: 200%;
   font-family: var(--font-1);
-  letter-spacing: 0.25%;
-  font-size: 160%;
   text-align: center;
-  background-color: var(--color-1);
-  border-radius: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  /*
-  padding-left: 20px;
-  padding-right: 20px;
-  */
-  display: block;
   text-decoration: none;
-  width: 70%;
+
+  padding: 2% 10px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: block;
 }
 
 .button:hover {
-  color: var(--background-color-1);
-  font-family: var(--font-1);
-  background-color: var(--color-1);
-  border-radius: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: block;
-  transition: 0.5s;
-  text-decoration: none;
+  color: var(--cor-texto);
+  background-color: var(--cor-principal);
+  transition: 0.4s;
+  opacity: 0.95;
 }
 
-#instagram {
-  background-color: var(--color-1);
-  border: 0px solid var(--color-1);
-  transition: 0.1s;
-}
+/* Botao de cada rede social */
 
 #instagram:hover {
-  color: white;
   background: radial-gradient(
       circle farthest-corner at 28% 100%,
       var(--yellow) 0%,
@@ -127,89 +139,316 @@ h2.subtitulo {
       transparent 65%
     ),
     linear-gradient(145deg, var(--blue) 10%, var(--purple) 70%);
-  border: 0px solid var(--color-1);
-  transition: 0.1s;
 }
 
-#linkedin {
-  border: 0px solid var(--color-1);
+#whatsapp:hover {
+  background-color: var(--color-whatsapp);
 }
 
-#linkedin:hover {
-  color: white;
-  font-family: var(--font-1);
-  background-color: var(--color-linkedin);
-  border: 0px solid var(--color-1);
+#youtube:hover {
+  background-color: var(--color-youtube);
 }
 
-#github {
-  color: var(--background-color-1);
-  font-family: var(--font-1);
-  background-color: var(--color-1);
-  border: 0px solid var(--color-1);
+#facebook:hover {
+  background-color: var(--color-facebook);
+}
+
+#twitch:hover {
+  background-color: var(--color-twitch);
+}
+
+#twitter:hover {
+  background-color: var(--color-twitter);
+}
+
+#tiktok:hover {
+  background-color: var(--color-tiktok);
 }
 
 #github:hover {
-  color: white;
-  font-family: var(--font-1);
   background-color: var(--color-github);
-  border: 0px solid var(--color-1);
 }
 
-/* Mobile */
-@media only screen and (max-device-width: 1200px) and (orientation: portrait) {
-  /* Main section */
+#linkedin:hover {
+  background-color: var(--color-linkedin);
+}
 
-  .main-section {
-    margin: auto;
-    display: block;
-    width: 88%;
+.animated-gradient {
+  animation: animateBg 10s linear infinite;
+
+  background: radial-gradient(
+    circle at 50% 0%,
+    hsl(212, 93%, 26%) 0%,
+    /* hsl(358, 65%, 55%)  hsl(212, 93%, 26%)*/ rgba(19, 20, 22, 1) 40%
+  );
+
+  background-size: 150%;
+
+  background-repeat: no-repeat;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: center top;
+    background-size: 150%;
   }
 
-  h1.titulo {
-    font-family: var(--font-1);
-    font-size: 420%;
-    font-weight: bold;
+  50% {
+    background-position: center top;
+    background-size: 300%;
   }
 
-  h2.subtitulo {
-    font-family: var(--font-1);
-    font-size: 380%;
-    font-weight: 200;
-    margin-top: -40px;
+  100% {
+    background-position: center top;
+    background-size: 150%;
+  }
+}
+
+/* layout adaptado para 280px */
+@media only screen and (min-device-width: 280px) and (orientation: portrait) {
+  div {
+    width: 92%;
   }
 
-  /* Parte com os links da pessoa*/
+  .user-image {
+    width: 32%;
+    margin: 4% auto;
+    border: 2px solid var(--cor-principal);
+  }
+
+  .titulo {
+    color: var(--cor-texto);
+    font-family: var(--font-2);
+    font-size: 1.1rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    font-weight: normal;
+  }
 
   .button {
-    font-family: var(--font-1);
-    letter-spacing: 0.25%;
-    font-size: 340%;
-    text-align: center;
-    border: 2px solid var(--color-1);
-    border-radius: 60px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin: auto;
-    margin-top: 14%;
-    margin-bottom: 14%;
-    transition: 0.5s;
-    display: block;
-    text-decoration: none;
+    font-size: 110%;
+    padding: 2% 10px;
+    margin-top: 6%;
+    margin-bottom: 6%;
   }
 
-  .button:hover {
-    font-family: var(--font-1);
-    background-color: var(--color-1);
-    border-radius: 60px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
+  .animated-gradient {
+    background: #1e212c;
+    background-color: #1e212c;
+  }
+}
+
+/* layout sendo adaptado para 320px */
+@media only screen and (min-device-width: 320px) and (orientation: portrait) {
+  div {
+    width: 92%;
+  }
+
+  .user-image {
+    width: 40%;
+    margin: 6% auto;
+    border: 2px solid var(--cor-principal);
+  }
+
+  .titulo {
+    color: var(--cor-texto);
+    font-family: var(--font-2);
+    font-size: 1.28rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .button {
+    font-size: 110%;
+    padding: 2% 10px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+
+  .animated-gradient {
+    background: #1e212c;
+    background-color: #1e212c;
+  }
+}
+
+/* Media query do 375px */
+@media only screen and (min-device-width: 375px) and (orientation: portrait) {
+  div {
+    width: 92%;
+  }
+
+  .user-image {
+    width: 40%;
+    margin: 6% auto;
+    border: 2px solid var(--cor-principal);
+  }
+
+  .titulo {
+    color: var(--cor-texto);
+    font-family: var(--font-2);
+    font-size: 1.5rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .button {
+    font-size: 110%;
+    padding: 2% 10px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+
+  .animated-gradient {
+    background: #1e212c;
+    background-color: #1e212c;
+  }
+}
+
+@media only screen and (min-device-width: 400px) and (orientation: portrait) {
+  div {
+    border: 0px solid white;
+    width: 92%;
+  }
+
+  .user-image {
+    width: 40%;
+    margin: 6% auto;
+    border: 2px solid var(--cor-principal);
+  }
+
+  .titulo {
+    color: var(--cor-texto);
+    font-family: var(--font-2);
+    font-size: 1.6rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .subtitulo {
+    font-size: 1.6rem;
+    font-weight: lighter;
+  }
+
+  .button {
+    font-size: 140%;
+    padding: 2% 10px;
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+
+  .animated-gradient {
+    background: #1e212c;
+    background-color: #1e212c;
+  }
+}
+
+/* Media query do 425px */
+@media only screen and (min-device-width: 425px) and (orientation: portrait) {
+  div {
+    width: 92%;
+  }
+
+  .user-image {
+    width: 46%;
+    margin: 6% auto;
+    border: 2px solid var(--cor-principal);
+  }
+
+  .titulo {
+    color: var(--cor-texto);
+    font-family: var(--font-2);
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .button {
+    font-size: 130%;
+    padding: 2% 10px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+
+  .animated-gradient {
+    background: #1e212c;
+    background-color: #1e212c;
+  }
+}
+
+/* Media Query para adaptar o site para desktop com resoluções menores, como 1280x720p */
+@media (min-device-width: 1024px) and (max-device-width: 1860px) {
+  .user-image {
+    border-radius: 50%;
+    border: 4px solid var(--cor-principal);
+    padding: 1%;
+
+    width: 28%;
+    height: auto;
+    margin: 2% auto;
     display: block;
-    transition: 0.5s;
+  }
+
+  .titulo {
+    color: var(--cor-texto);
+    font-family: var(--font-2);
+    font-size: 200%;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1rem;
+  }
+
+  .subtitulo {
+    color: var(--cor-texto);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    color: #131416;
+    opacity: 0.8;
+    backdrop-filter: blur(9.5px);
+    background-color: var(--cor-texto);
+    -webkit-backdrop-filter: blur(12.5px);
+    border-radius: 40px;
+    transition: 0.4s;
+
+    font-size: 160%;
+    font-family: var(--font-1);
+    text-align: center;
     text-decoration: none;
+
+    padding: 2% 10px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: block;
   }
 }
