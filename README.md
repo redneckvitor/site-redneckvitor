@@ -1,6 +1,6 @@
 ## Meu site pessoal com meus links
 ### Acesse o meu site em:
-[redneckvitor.neocities.org/](https://redneckvitor.neocities.org/)
+[redneckvitor.neocities.org](https://redneckvitor.neocities.org/)
 <hr>
 
 ![.](https://i.postimg.cc/D0SPJ9Jh/Screenshot-2023-02-01-at-20-09-52-Jo-o-V-tor-Rodrigues.png)
